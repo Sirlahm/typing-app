@@ -140,7 +140,11 @@ const [words, setWords] = useState(string);
       <div>
         <div className={classes.set}>
           <h2 className={classes.count}>Timer: {count}</h2>
-          <Select handleChange={getCountDown} />
+          
+          
+          {status === "started" ? null : (
+            <Select handleChange={getCountDown} />
+          )}
           {status === "started" ? null : (
             <Button data-cy="button-compose" handleClick={close}>
               Compose Paragraph
